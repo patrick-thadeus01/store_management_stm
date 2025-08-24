@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "receipt")
-public class Receipt {
+public class ReceiptEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -17,7 +17,7 @@ public class Receipt {
     @Column(name = "amount")
     private double amount;
 
-    @OneToOne(mappedBy = "receipt", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "receiptEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 
-    private Command command;
+    private CommandEntity commandEntity;
 }

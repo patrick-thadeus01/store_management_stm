@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @Table(name = "command")
 @ToString
-public class Command {
+public class CommandEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,13 +33,13 @@ public class Command {
 
     @OneToOne()
     @JoinColumn(name = "receipt_id")
-    private Receipt receipt;
+    private ReceiptEntity receiptEntity;
 
-    @OneToMany(mappedBy = "command", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ProductOrdered> productOrdereds;
+    @OneToMany(mappedBy = "commandEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ProductOrderedEntity> productOrderedEntities;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity user;
 
 }

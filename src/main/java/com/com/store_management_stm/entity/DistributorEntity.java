@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "distributor")
 
 
-public class Distributor {
+public class DistributorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -34,6 +34,6 @@ public class Distributor {
     @Column(name = "address", nullable = false)
     private String address;
 
-    @ManyToMany(mappedBy = "distributors", fetch = FetchType.LAZY)
-    private List<Product> products;
+    @ManyToMany(mappedBy = "distributorEntities", fetch = FetchType.LAZY)
+    private List<ProductEntity> productEntities;
 }

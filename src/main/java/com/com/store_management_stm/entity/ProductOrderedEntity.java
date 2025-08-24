@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "product_ordered")
-public class ProductOrdered {
+public class ProductOrderedEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,9 +29,9 @@ public class ProductOrdered {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product product;
+    private ProductEntity productEntity;
 
     @ManyToOne
     @JoinColumn(name = "command_id")
-    private Command command;
+    private CommandEntity commandEntity;
 }
